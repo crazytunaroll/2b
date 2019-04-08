@@ -1,0 +1,76 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <cstdlib>
+#include <stdio.h>
+
+using namespace std;
+
+int menu();
+string addTicket();
+string viewTicket();
+string updateTicket();
+void sysPause();
+void exit();
+	
+	int main()
+	{
+			int userInput;
+	
+	do
+	{
+		userInput = menu();
+		switch(userInput)
+			{ 
+				case 1: addTicket();
+			break; 
+				case 2: viewTicket();
+			break; 
+				case 3: updateTicket();
+			break; 
+				case 4: exit();
+			break; 
+				default: cout << "Please enter a valid choice \n";
+			}
+		}	while (userInput != 4);
+
+		cout << "\n What would you do for a Klondike bar??? \n" << endl;
+	system("PAUSE");
+	return 0;
+}
+
+int menu() {
+	int choice;
+		cout << "\n\n\t====================================================\n"
+			 << "\t\t\t\t  Main Menu\n"
+			 << "\t====================================================\n"
+			 << "\t\t 1) Create ticket\n"
+			 << "\t\t 2) View tickets\n"
+			 << "\t\t 3) Update ticket\n"
+			 << "\t\t 4) Save and exit\n"
+			 << "\t====================================================\n"
+			 << " \n\t\t Please enter a selection: ";
+			 
+		cin >> choice;
+		return choice;
+}
+	
+string addTicket() 
+{
+	
+}
+
+string viewTicket()
+{
+	
+}
+
+string updateTicket()
+{
+	
+}
+
+void exit()
+{
+	cout << "Thank you come again. \n";
+}
