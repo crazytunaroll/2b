@@ -5,28 +5,26 @@
 using namespace std;
 
 Customer::Customer(){
-
 equipment = 0; 
 ID = "";
 
 };
 
-Customer::setEquip(){
-
-
-};
-
-Customer::getEquip(){
-
+void Customer::setEquip(int equipID){
+  equipment = equipID;
 
 };
 
-Customer::setID(){
-
-
-};
-
-Customer::getID(){
-
+void Customer::setID(string id){
+  ID = id;
 
 };
+
+void Person::setName(string firstn, string lastn){
+ fname = firstn;
+ lname = lastn;
+};
+
+string Person::getName(){return fname; return lname;};
+int Customer::getEquip(){return equipment;};
+string Customer::getID(){return ID;};
