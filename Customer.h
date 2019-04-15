@@ -9,10 +9,12 @@ class Customer:public Person{
 
 public:
 		Customer();
-		setEquip();
-		getEquip();
-		setID();
-		getID();
+		void setEquip(int);
+    void setID(string);
+    virtual void setName(string fname,string lname);
+		virtual string getName();
+		int getEquip();
+		string getID();
 private:
 	
 		int equipment;
