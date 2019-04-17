@@ -1,4 +1,5 @@
 //Customer.cpp
+//This will serve as the implementation file for Customer
 #include <iostream>
 #include "Customer.h"
 #include"Person.h"
