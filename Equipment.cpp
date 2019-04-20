@@ -1,4 +1,6 @@
 #include "Equipment.h"
+#include <iostream>
+using namespace std;
 
 Equipment::Equipment()
 {
@@ -11,30 +13,46 @@ Equipment::Equipment()
   ticNum = 0;
 }
 
-void Equipment::setDate(int D, int M, int Y)
+void Equipment::setDate()
 {
+	int D;
+	int M;
+	int Y;
   day = D;
   month = M;
   year = Y;
+  
+  cout<<"Enter Date:";
+  cin>> day >> month >> year;
 }
 
-void Equipment::setTime(int min, int h)
+/*void Equipment::setTime(int min, int h)
 {
   minute = min;
   hour = h;
 }
+*/
 
-void Equipment::setTicket(int st, int id, int tick)
+void Equipment::setTicket( )
 {
+  int st;
+  int id;
+  int tick;
   status = st;
   equipID = id;
   ticNum = tick;
+  
+  cout<<"Enter ticket status:";
+  cin>>status;
+  cout<<"Enter equipment id:";
+  cin>>equipID;
+  cout<<"Enter ticket number:";
+  cin>>ticNum;
 }
 
 int Equipment::getDate() {return day; return month; return year;}
 
-int Equipment::getTime() {return minute; return hour;}
+//int Equipment::getTime() {return minute; return hour;}
 
 int Equipment::getTicket() {return status; return equipID; return ticNum;}
-
 
