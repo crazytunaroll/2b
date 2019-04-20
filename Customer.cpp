@@ -7,25 +7,25 @@ using namespace std;
 
 Customer::Customer(){
 equipment = 0; 
-ID = "";
+CustID = "";
 
 };
 
-void Customer::setEquip(int equipID){
+/*void Customer::setEquip(int equipID){
   equipment = equipID;
+ 
+ 
+};
+*/
+  string Customer::setCustID(){
+  string id;
+  CustID = id;
+  cout<<"Enter customer ID:";
+  cin>>CustID;
 
 };
 
-void Customer::setID(string id){
-  ID = id;
 
-};
 
-void Person::setName(string firstn, string lastn){
- fname = firstn;
- lname = lastn;
-};
-
-string Person::getName(){return fname; return lname;};
 int Customer::getEquip(){return equipment;};
-string Customer::getID(){return ID;};
+string Customer::getID(){return CustID;};
