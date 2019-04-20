@@ -14,17 +14,19 @@ lname="";
 Person::setName(){
 
  cout<<"Enter first name"<<endl;
- cin>>firstn;
+ cin>>fname;
  cout<<"Enter last name"<<endl;
- cin>>lastn;
+ cin>>lname;
 };
 
-Person::getName(){
+Person::getName(string,string){
 
 string firstn;
 string lastn;
+string fullname;
 
 firstn=fname;
 lastn=lname;
 
+fullname = fname + " " +lname;
 };
