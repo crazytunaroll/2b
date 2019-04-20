@@ -9,7 +9,7 @@ class Person{
 
 public:
 			Person();
-			setName(string,string);
+			setName();
 			getName(string,string);
 private:
 			string fname;
