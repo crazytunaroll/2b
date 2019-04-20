@@ -6,9 +6,9 @@ class Equipment
 {
   public:
     Equipment();
-    void setDate(int D, int M, int Y);
-    void setTicket(int st, int id, int tick);
-    void setTime(int min, int h);
+    void setDate();
+    void setTicket();
+   // void setTime(int min, int h);
     int getDate();
     int getTime();
     int getTicket();
