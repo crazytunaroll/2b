@@ -1,8 +1,168 @@
+/*
+
+#include <iostream>
+
+#include <string>
+
+#include <fstream>
+
+#include <cstdlib>
+
+#include <stdio.h>
+
+
+
+using namespace std;
+
+
+
+int menu();
+
+string addTicket();
+
+string viewTicket();
+
+string updateTicket();
+
+void sysPause();
+
+void exit();
+
+	
+
+	int main()
+
+	{
+
+			int userInput;
+
+	
+
+	do
+
+	{
+
+		userInput = menu();
+
+		switch(userInput)
+
+			{ 
+
+				case 1: addTicket();
+
+			break; 
+
+				case 2: viewTicket();
+
+			break; 
+
+				case 3: updateTicket();
+
+			break; 
+
+				case 4: exit();
+
+			break; 
+
+				default: cout << "Please enter a valid choice \n";
+
+			}
+
+		}	while (userInput != 4);
+
+
+
+		cout << "\n What would you do for a Klondike bar??? \n" << endl;
+
+	system("PAUSE");
+
+	return 0;
+
+}
+
+
+
+int menu() {
+
+	int choice;
+
+		cout << "\n\n\t====================================================\n"
+
+			 << "\t\t\t\t  Main Menu\n"
+
+			 << "\t====================================================\n"
+
+			 << "\t\t 1) Create ticket\n"
+
+			 << "\t\t 2) View tickets\n"
+
+			 << "\t\t 3) Update ticket\n"
+
+			 << "\t\t 4) Save and exit\n"
+
+			 << "\t====================================================\n"
+
+			 << " \n\t\t Please enter a selection: ";
+
+			 
+
+		cin >> choice;
+
+		return choice;
+
+}
+
+	
+
+string addTicket() 
+
+{
+
+	
+
+}
+
+
+
+string viewTicket()
+
+{
+
+	
+
+}
+
+
+
+string updateTicket()
+
+{
+
+	
+
+}
+
+
+
+void exit()
+
+{
+
+	cout << "Thank you come again. \n";
+
+}
+
+*/
 #include <iostream>
 #include <string>
 #include <fstream>
 #include <cstdlib>
 #include <stdio.h>
+#include <queue>
+#include"Person.h"
+#include "Technician.h"
+#include "Customer.h"
+#include "Equipment.h"
 
 using namespace std;
 
@@ -10,34 +170,12 @@ int menu();
 string addTicket();
 string viewTicket();
 string updateTicket();
+string deleteTicket();
 void sysPause();
 void exit();
 	
-	int main()
-	{
-			int userInput;
-	
-	do
-	{
-		userInput = menu();
-		switch(userInput)
-			{ 
-				case 1: addTicket();
-			break; 
-				case 2: viewTicket();
-			break; 
-				case 3: updateTicket();
-			break; 
-				case 4: exit();
-			break; 
-				default: cout << "Please enter a valid choice \n";
-			}
-		}	while (userInput != 4);
 
-		cout << "\n What would you do for a Klondike bar??? \n" << endl;
-	system("PAUSE");
-	return 0;
-}
+
 
 int menu() {
 	int choice;
@@ -47,7 +185,8 @@ int menu() {
 			 << "\t\t 1) Create ticket\n"
 			 << "\t\t 2) View tickets\n"
 			 << "\t\t 3) Update ticket\n"
-			 << "\t\t 4) Save and exit\n"
+			 << "\t\t 4) Delete Ticket\n"
+			 << "\t\t 5) Save and exit\n"
 			 << "\t====================================================\n"
 			 << " \n\t\t Please enter a selection: ";
 			 
@@ -55,22 +194,172 @@ int menu() {
 		return choice;
 }
 	
-string addTicket() 
+	int main()
+	{
+			int userInput;
+			Customer C1;
+			Technician T1;
+			Equipment E1;
+			queue <Customer> Custq;
+			queue <Technician> Techq;
+			queue <Equipment> Equipq;
+	do
+	{
+		userInput = menu();
+		switch(userInput)
+			{ 
+				case 1: //addTicket();
+					C1.setName();
+					C1.setCustID();
+					Custq.push(C1);
+					
+					T1.setName();
+					T1.setID();
+					T1.setLvl();
+					Techq.push(T1);
+					
+					 E1.setDate();
+					 E1.setTicket();
+					 Equipq.push(E1);
+					
+			break; 
+				case 2: //viewTicket();
+			break; 
+				case 3: //updateTicket();
+			break; 
+				case 4: //delete ticket();
+			break;
+				case 5: exit();
+			break; 
+				default: cout << "Please enter a valid choice \n";
+			}
+		}	while (userInput != 5);
+
+	
+	system("PAUSE");
+	return 0;
+}
+/*string addTicket() 
 {
 	
+	
+	fstream myfile;
+myfile.open ("Info.txt", ios::app);
+myfile << "\nTechnician name: " << name;
+myfile << "\nCustomer  name: " << customer;
+myfile << "\nEquipment ID: " << ID;
+myfile << "\nPrice: $" << price << endl;
+myfile.close();
+
+system("PAUSE");
+return string();
+
 }
 
 string viewTicket()
 {
+
+string line_;
+	fstream myfile("Info.txt");
+	if(myfile.is_open())
+	{
+		while(getline(myfile,line_))
+		{
+			cout<<line_<< '\n';
+		}
+		myfile.close();
+	}
+	else
+		cout << "File does not exist" << '\n';
+		cin.get();
+		
+	system("PAUSE");
+	return string();
 	
 }
 
 string updateTicket()
 {
+	string updateData()
+{
+    int k=0;
+    string line;
+    string find;
+    string name;
+    string author;
+    double price;
+
+    while(k!=2){
+
+        cout<<"Would you like to update a ticket? 1 for yes 2 for no"<<endl;
+
+        cin>>k;
+
+        if(k==1)
+        {
+
+            cout<<"What is the customer ID you would like to update? "<<endl;
+            cin>>find; 
+            
+            ifstream myfile; //for reading records
+  			 myfile.open("Info.txt");
+
+    			ofstream temp;
+    			temp.open("temp.txt");
+    			while (getline(myfile, line))
+    {
+      		if (line != find)
+        		temp << line << endl;
+    }
+    
+    cout<<"Enter the Customer ID: ";
+            cin.ignore();
+            getline(cin, name);
+            
+            cout<<"Enter the Technician: ";
+            cin.ignore();
+            getline(cin, author);
+
+            cout<<"Enter the Custome ID: ";
+            cin>>customer;
+            
+            cout<<"Enter the equipment ID: ";
+            cin>>ID;
+            
+            cout<<"Enter the Price: $ ";
+            cin>>price;
+    
+    
+    myfile.close();
+    temp.close();
+    remove("Info.txt");
+    rename("temp.txt", "Info.txt");      
+            
+}
+        
+        else{
+            cout << "Thank you";
+        }
+    
+    return string();
 	
+}
+
+string deleteTicket()
+{
+
+  if( remove( "Info.txt" ) != 0 )
+    perror( "Error deleting file" );
+    
+  else
+    puts( "File successfully deleted" );
+    
+  return string();
+  
 }
 
 void exit()
 {
 	cout << "Thank you come again. \n";
 }
+*/
