@@ -1,165 +1,10 @@
-/*
-
-#include <iostream>
-
-#include <string>
-
-#include <fstream>
-
-#include <cstdlib>
-
-#include <stdio.h>
-
-
-
-using namespace std;
-
-
-
-int menu();
-
-string addTicket();
-
-string viewTicket();
-
-string updateTicket();
-
-void sysPause();
-
-void exit();
-
-	
-
-	int main()
-
-	{
-
-			int userInput;
-
-	
-
-	do
-
-	{
-
-		userInput = menu();
-
-		switch(userInput)
-
-			{ 
-
-				case 1: addTicket();
-
-			break; 
-
-				case 2: viewTicket();
-
-			break; 
-
-				case 3: updateTicket();
-
-			break; 
-
-				case 4: exit();
-
-			break; 
-
-				default: cout << "Please enter a valid choice \n";
-
-			}
-
-		}	while (userInput != 4);
-
-
-
-		cout << "\n What would you do for a Klondike bar??? \n" << endl;
-
-	system("PAUSE");
-
-	return 0;
-
-}
-
-
-
-int menu() {
-
-	int choice;
-
-		cout << "\n\n\t====================================================\n"
-
-			 << "\t\t\t\t  Main Menu\n"
-
-			 << "\t====================================================\n"
-
-			 << "\t\t 1) Create ticket\n"
-
-			 << "\t\t 2) View tickets\n"
-
-			 << "\t\t 3) Update ticket\n"
-
-			 << "\t\t 4) Save and exit\n"
-
-			 << "\t====================================================\n"
-
-			 << " \n\t\t Please enter a selection: ";
-
-			 
-
-		cin >> choice;
-
-		return choice;
-
-}
-
-	
-
-string addTicket() 
-
-{
-
-	
-
-}
-
-
-
-string viewTicket()
-
-{
-
-	
-
-}
-
-
-
-string updateTicket()
-
-{
-
-	
-
-}
-
-
-
-void exit()
-
-{
-
-	cout << "Thank you come again. \n";
-
-}
-
-*/
 #include <iostream>
 #include <string>
 #include <fstream>
 #include <cstdlib>
 #include <stdio.h>
 #include <queue>
-#include"Person.h"
+#include "Person.h"
 #include "Technician.h"
 #include "Customer.h"
 #include "Equipment.h"
@@ -203,6 +48,10 @@ int menu() {
 			queue <Customer> Custq;
 			queue <Technician> Techq;
 			queue <Equipment> Equipq;
+			Customer myCustomer = Custq.front();
+			Technician myTech = Techq.front();
+			Equipment myEquip = Equipq.front();
+				
 	do
 	{
 		userInput = menu();
@@ -224,6 +73,15 @@ int menu() {
 					
 			break; 
 				case 2: //viewTicket();
+					cout<<"Ticket Info"	<<endl;
+					cout<<"-------------------------------------"<<endl;
+					cout<<"Customer:"<<myCustomer.getName()<<endl;
+					cout<<"Customer ID#:"<<myCustomer.getCustID()<<endl;
+					cout<<"Technician:"<<myTech.getName()<<endl;
+					cout<<"Technician ID#:"<<myTech.getID()<<endl;
+					cout<<"Technician lvl:"<<myTech.getLvl()<<endl;
+					cout<<"Ticket Made:"<<myEquip.getDate()<<endl;
+					cout<<"Ticket Info:"<<myEquip.getTicket()<<endl;
 			break; 
 				case 3: //updateTicket();
 			break; 
@@ -246,10 +104,14 @@ int menu() {
 	fstream myfile;
 myfile.open ("Info.txt", ios::app);
 myfile << "\nTechnician name: " << name;
+myfile << "\nTechnician ID: " << techID;
+myfile << "\nTechnician level: " << techlvl;
 myfile << "\nCustomer  name: " << customer;
-myfile << "\nEquipment ID: " << ID;
-myfile << "\nPrice: $" << price << endl;
+myfile << "\nCustomer ID: " << CustID;
+myfile << "\nTicket made: : " << Date;
+myfile << "\nTicket info: " << Ticket << endl;
 myfile.close();
+
 
 system("PAUSE");
 return string();
@@ -285,9 +147,8 @@ string updateTicket()
     int k=0;
     string line;
     string find;
-    string name;
-    string author;
-    double price;
+    string customer;
+    double technician;
 
     while(k!=2){
 
@@ -314,20 +175,18 @@ string updateTicket()
     
     cout<<"Enter the Customer ID: ";
             cin.ignore();
+            getline(cin, custID);
+            
+            cout<<"Enter the Customer name: ";
+            cin.ignore();
             getline(cin, name);
             
             cout<<"Enter the Technician: ";
             cin.ignore();
-            getline(cin, author);
+            getline(cin, techName);
 
-            cout<<"Enter the Custome ID: ";
-            cin>>customer;
-            
-            cout<<"Enter the equipment ID: ";
-            cin>>ID;
-            
-            cout<<"Enter the Price: $ ";
-            cin>>price;
+            cout<<"Enter the Technician ID: ";
+            cin>>TechID;
     
     
     myfile.close();
