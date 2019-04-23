@@ -2,30 +2,28 @@
 //This will serve as the implementation file for Customer
 #include <iostream>
 #include "Customer.h"
-#include"Person.h"
 using namespace std;
 
 Customer::Customer(){
 equipment = 0; 
-CustID = "";
+ID = 0;
 
 };
 
-/*void Customer::setEquip(int equipID){
+void Customer::setEquip(int equipID){
   equipment = equipID;
- 
- 
-};
-*/
-  string Customer::setCustID(){
-  string id;
-  CustID = id;
-  cout<<"Enter customer ID:";
-  cin>>CustID;
 
 };
 
+void Customer::setCustID(int id){
+  ID = id;
 
+};
 
-int Customer::getEquip(){return equipment;};
-string Customer::getID(){return CustID;};
+void Customer::setName(string firstn, string lastn){
+ fname = firstn;
+ lname = lastn;
+};
+
+string Customer::getName() {return fname; return lname;};
+int Customer::getEquip(){return equipment;}
