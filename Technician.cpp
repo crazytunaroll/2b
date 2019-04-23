@@ -1,46 +1,30 @@
 //Technician.cpp
 #include <iostream>
 #include "Technician.h"
-#include"Person.h"
 using namespace std;
 
 Technician::Technician(){
 
-
-
 ID=0;
 level=0;
 
-};
+}
 
 
+void Technician::setName(string firstn, string lastn){
+ fname = firstn;
+ lname = lastn;
+}
+
+void Technician::setID(int techID){
+	ID = techID;
+}
 
 
+void Technician::setLvl(int Level){
+	level = Level;
+}
 
-Technician::setID(){
-	
-	cout << "What is the technician's ID level? \n" << endl;
-	cin >> ID;
-
-
-};
-
-Technician::getID(){
-	
-	int ID;
-
-};
-
-Technician::setLvl(){
-	
-	cout << "What is the technician's level? \n";
-	cin >> level;
-
-
-};
-
-Technician::getLvl(){
-
-	int level;
-
-};
+string Technician::getName() const {return fname; return lname;}
+int Technician::getID(){return ID;}
+int Technician::getLvl(){return level;}
