@@ -21,5 +21,5 @@ void Customer::setCustID(int id){
 };
 
 
-string Customer::getName() {return fname; return lname;};
+
 int Customer::getEquip(){return equipment;}
