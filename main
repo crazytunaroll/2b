@@ -87,7 +87,7 @@ int menu() {
 			break; 
 				case 4: //delete ticket();
 			break;
-				case 5: exit();
+				case 5: cout << "Please enter a valid choice \n";
 			break; 
 				default: cout << "Please enter a valid choice \n";
 			}
