@@ -20,10 +20,6 @@ void Customer::setCustID(int id){
 
 };
 
-void Customer::setName(string firstn, string lastn){
- fname = firstn;
- lname = lastn;
-};
 
 string Customer::getName() {return fname; return lname;};
 int Customer::getEquip(){return equipment;}
