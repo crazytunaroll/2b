@@ -11,6 +11,8 @@ Equipment::Equipment()
   status = 0;
   equipID = 0;
   ticNum = 0;
+  totalHours = 0;
+  part = 0;
 }
 
 void Equipment::setDate()
@@ -21,7 +23,7 @@ void Equipment::setDate()
   day = D;
   month = M;
   year = Y;
-  
+
   cout<<"Enter Date:";
   cin>> day >> month >> year;
 }
@@ -41,13 +43,21 @@ void Equipment::setTicket( )
   status = st;
   equipID = id;
   ticNum = tick;
-  
-  cout<<"Enter ticket status:";
+
+  cout<<"Enter ticket status: 1)pending 2)uncompleted 3)completed" << endl;
   cin>>status;
   cout<<"Enter equipment id:";
   cin>>equipID;
   cout<<"Enter ticket number:";
   cin>>ticNum;
+}
+
+Equipment::setTotalHours(int h){
+    totalHours = h;
+}
+
+Equipment::setPart(int p){
+    part = p;
 }
 
 int Equipment::getDate() {return day; return month; return year;}
@@ -56,3 +66,6 @@ int Equipment::getDate() {return day; return month; return year;}
 
 int Equipment::getTicket() {return status; return equipID; return ticNum;}
 
+int Equipment::getTotalHours() {return totalHours;}
+
+int Equipment::getPart() {return part;}
